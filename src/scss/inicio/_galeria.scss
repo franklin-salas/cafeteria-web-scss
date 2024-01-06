@@ -1,0 +1,31 @@
+@use 'base/mixins' as m;
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @include m.tablet { 
+        grid-template-columns: repeat(4,1fr);
+        
+     } 
+
+     .imagen {
+        img{
+            height: 30rem;
+            width: 30rem;
+            object-fit: cover;
+        }
+
+        @include m.desktop { 
+            &:nth-child(1){
+                grid-row: 1 / 3;
+                img {
+                    height: 62rem;
+                }
+            }
+          } 
+     }
+     
+    
+}
